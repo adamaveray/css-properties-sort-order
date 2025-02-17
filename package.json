@@ -1,0 +1,28 @@
+{
+  "name": "@averay/css-properties-sort-order",
+  "author": "Adam Averay (https://adamaveray.com.au/)",
+  "description": "CSS property ordering based on the SMACSS property order.",
+  "license": "MIT",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/properties-order.json",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamaveray/css-properties-sort-order.git"
+  },
+  "scripts": {
+    "build": "bun ./scripts/build.mjs > ./dist/properties-order.json",
+    "format": "bun --bun x prettier --write --ignore-path .gitignore '**/*.{mjs,json,md}'",
+    "lint": "bun --bun x prettier --check --ignore-path .gitignore '**/*.{mjs,json,md}'",
+    "prepublishOnly": "bun run build"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.1"
+  }
+}
