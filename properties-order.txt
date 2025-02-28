@@ -6,6 +6,9 @@ quotes
 # Box
 
 display
+container
+container-name
+container-type
 visibility
 appearance
 position
