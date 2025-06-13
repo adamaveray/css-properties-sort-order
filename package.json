@@ -18,13 +18,20 @@
   },
   "scripts": {
     "build": "bun ./scripts/build.mjs > ./dist/properties-order.json",
-    "format": "bun --bun x prettier --write --ignore-path .gitignore '**/*.{mjs,json,md}'",
-    "lint": "bun --bun x prettier --check --ignore-path .gitignore '**/*.{mjs,json,md}'",
+    "format": "bun run format:prettier",
+    "format:prettier": "bun --bun x prettier --write --ignore-path .gitignore '**/*.{mjs,json,md}'",
+    "lint": "bun run lint:prettier && bun run lint:tsc",
+    "lint:prettier": "bun --bun x prettier --check --ignore-path .gitignore '**/*.{mjs,json,md}'",
+    "lint:tsc": "bun --bun x tsc --noEmit",
     "release": "bun run lint && bun --bun x bumpp && bun publish",
+    "prepare": "bun --bun x husky",
     "prepublishOnly": "bun run build"
   },
   "devDependencies": {
+    "@types/bun": "^1.2.16",
+    "typescript": "^5.8.3",
     "bumpp": "^10.1.1",
+    "husky": "^9.1.7",
     "prettier": "^3.5.3"
   }
 }
