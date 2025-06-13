@@ -5,7 +5,11 @@
   "license": "MIT",
   "version": "1.0.1",
   "type": "module",
-  "main": "./dist/properties-order.json",
+  "main": "./dist/properties-order.js",
+  "exports": {
+    ".": "./dist/properties-order.js",
+    "./json": "./dist/properties-order.json"
+  },
   "files": [
     "dist"
   ],
@@ -17,7 +21,9 @@
     "url": "git+https://github.com/adamaveray/css-properties-sort-order.git"
   },
   "scripts": {
-    "build": "bun ./scripts/build.mts > ./dist/properties-order.json",
+    "build": "bun run build:js & bun run build:json & wait",
+    "build:js": "bun ./scripts/build.mts js > ./dist/properties-order.js",
+    "build:json": "bun ./scripts/build.mts json > ./dist/properties-order.json",
     "format": "bun run format:prettier",
     "format:prettier": "bun --bun x prettier --write --ignore-path .gitignore '**/*.{mjs,json,md}'",
     "lint": "bun run lint:prettier && bun run lint:tsc",
