@@ -1,3 +1,4 @@
+import { name as moduleName } from '../package.json' assert { type: 'json' };
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import process from 'node:process';
@@ -20,6 +21,12 @@ switch (format) {
 
   case 'js':
     output = `export default ${JSON.stringify(lines, null, 2)};`;
+    break;
+
+  case 'ts':
+    output = `module '${moduleName}' {
+  export default ${JSON.stringify(lines, null, 2)};
+}`;
     break;
 
   default:

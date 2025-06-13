@@ -6,6 +6,7 @@
   "version": "1.0.2",
   "type": "module",
   "main": "./dist/properties-order.js",
+  "types": "./dist/properties-order.d.ts",
   "exports": {
     ".": "./dist/properties-order.js",
     "./json": "./dist/properties-order.json"
@@ -21,9 +22,10 @@
     "url": "git+https://github.com/adamaveray/css-properties-sort-order.git"
   },
   "scripts": {
-    "build": "bun run build:js & bun run build:json & wait",
+    "build": "bun run build:js & bun run build:json & bun run build:ts & wait",
     "build:js": "bun ./scripts/build.mts js > ./dist/properties-order.js",
     "build:json": "bun ./scripts/build.mts json > ./dist/properties-order.json",
+    "build:ts": "bun ./scripts/build.mts ts > ./dist/properties-order.d.ts",
     "format": "bun run format:prettier",
     "format:prettier": "bun --bun x prettier --write --ignore-path .gitignore '**/*.{mjs,json,md}'",
     "lint": "bun run lint:prettier && bun run lint:tsc",
