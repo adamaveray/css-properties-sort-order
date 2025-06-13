@@ -3,7 +3,7 @@
   "author": "Adam Averay (https://adamaveray.com.au/)",
   "description": "CSS property ordering based on the SMACSS property order.",
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "main": "./dist/properties-order.js",
   "exports": {
