@@ -2,6 +2,10 @@
   "name": "@averay/css-properties-sort-order",
   "author": "Adam Averay (https://adamaveray.com.au/)",
   "description": "CSS property ordering based on the SMACSS property order.",
+  "homepage": "https://codeberg.org/adamaveray/css-properties-sort-order",
+  "bugs": {
+    "url": "https://codeberg.org/adamaveray/css-properties-sort-order/issues"
+  },
   "license": "MIT",
   "version": "1.0.3",
   "type": "module",
@@ -19,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adamaveray/css-properties-sort-order.git"
+    "url": "git+https://codeberg.org/adamaveray/css-properties-sort-order.git"
   },
   "scripts": {
     "build": "bun run build:js & bun run build:json & bun run build:ts & wait",
